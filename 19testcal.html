@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19testcal.html</title>
+
+    <script>
+        function mycal(){
+            var info='', msg='', data='' ;
+            var Gsul=0, Ganju=0, price1=0, price2=0, Gtotal=0 ;
+
+            var my_sul = document.myform.sul.value;
+            var my_anju = document.myform.anju.value;
+            var tex1 = document.myform.text1.value;
+            var tex2 = document.myform.text2.value;
+
+
+            if(my_sul=="소주"){ price1=3000; }
+            else if(my_sul=="맥주"){ price1=4000; }
+            else if(my_sul=="콜라"){ price1=2000; }
+            else{ }
+
+            if(my_anju=="제육"){ price2=8000; }
+            else if(my_anju=="두부"){ price2=10000; }
+            else if(my_anju=="김치"){ price2=5000; }
+            else if(my_anju=="파전"){ price2=7000; }
+            else { }   
+            
+            Gsul = parseInt(price1)*parseInt(tex1);
+            Ganju = parseInt(price2)*parseInt(tex2);
+
+            data = ' 음료 : ' + my_drink + '\t\t주문수량 : ' + tex1 + '\t\t합계 : '+ Gsul + '원\n' ;
+            data +=  ' 음료 : ' + my_anju + '\t\t주문수량 : ' + tex1 + '\t\t합계 : '+ Ganju + '원\n' ;
+            data += ' 총합계 : ' + (Gsul+Ganju) + '원';
+            document.myform.result.value = data ;
+
+            // info = ' 음료 : ' + my_drink + '&nbsp;&nbsp;주문수량 : ' + tex1 + '&nbsp;&nbsp;합계 : ' +Gdrink +'원\<br>';
+            // info += ' 안주 : ' + my_anju + '&nbsp;&nbsp;주문수량 : ' + tex2 + '&nbsp;&nbsp;합계 : ' +Ganju +'원\<br>';
+            // info += ' 총합계 : ' + (Gdrink+Ganju) + '원';
+            // document.getElementById('display').innerHTML = info;
+        }
+    </script>
+</head>
+<body>
+    <!-- 소주(3000원) 맥주(4000원) 콜라(2000원)  -->
+    <!-- 제육볶음(8000원) 두부김치(10000원) 해물파전(7000원) 김치파전(5000원)  -->
+    <h1> <font color="skyblue">[주문표]</font> </h1>
+    <form name="myform">
+        <table border="0" >
+            <tr>
+                <td width="100">술종류</td>
+                <td width="50">갯수</td>
+                <td width="100">안주종류</td>
+                <td width="50">갯수</td>
+            </tr>
+            <tr>
+                <td width = 100>
+                    <select name="sul" >
+                        <option value="소주">소주(3000원)</option>
+                        <option value="맥주">맥주(4000원)</option>
+                        <option value="콜라">콜라(2000원)</option>
+                    </select>
+                </td>
+                <td width=50>
+                    <input type="text" name="text1" >
+                </td>
+                <td width=100>
+                    <select name="anju" >
+                        <option value="제육">제육볶음(8000원)</option>
+                        <option value="두부">두부김치(10000원)</option>
+                        <option value="파전">해물파전(7000원)</option>
+                        <option value="김치">김치파전(5000원)</option>
+                    </select>
+                </td>
+                <td width=50>
+                    <input type="text" name="text2" >
+                </td>
+            </tr>
+        </table>
+        <p></p>
+        <input type="button" value="주문하기"
+            onclick="mycal()" style="font-size: 20pt;"> <p>
+        <textarea name="result"  cols="80" rows="20"
+            style="font-size: 12pt; background-color: #abcdef;">주문내역표시
+        </textarea>
+    </form>
+    
+</body>
+</html>

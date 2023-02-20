@@ -1,0 +1,60 @@
+0220
+
+
+제어문 - if,switch
+반복문 - for(1;2;3){ }, while(조건){ }, do{최소1회실행}while(조건);
+switch의 case 처리 후 탈출 break
+
+>> 보조제어문 break, continue 단독기술은 의미없음
+
+	break 반복문탈출, switch탈툴
+	continue 반복문 다시 복귀
+
+	for( ; continue<10;){
+	  1처리
+	  2처리 continue보조제어문 --> 3,4처리하지않고 다시 위로복귀
+	  3처리
+	  4처리
+	}
+
+
+
+
+
+10test
+
+a=0
+  b=0부터 0<0 조건불만족 21라인🌟출력안함
+a=1
+  b=0처리 0<1 조건만족  21라인🌟출력
+  b=1처리 1<1 조건불만족 21라인🌟출력안함
+a=2
+  b=0  0<2 조건만족    21라인🌟출력
+  b=1  1<2 조건만족    21라인🌟출력
+  b=2  2<2 조건불만족   21라인🌟출력
+
+
+
+
+
+
+
+
+
+-function < 13testgugudan>
+
+function myHap( x매개인자, y매개인자 ){
+  var total = 0 ; 
+  total =  x + y ;
+}//end
+
+
+<button onclick="myHap(90,85);"> 더하기 </button>
+
+function mydan(x){
+	for(i=1 ; i<10; i++){
+	document.write(x + '*' + i + '=' + (x*i));
+	}
+}
+
+<button onclick="mydan(90,85);"> 구구단 </button>

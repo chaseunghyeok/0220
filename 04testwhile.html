@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>*{font-size: 20pt;} </style>
+   
+<script>
+  var su=0, hap=0, k=0; //함수 밖에쓰면 전역변수 
+    function mynumber(){
+         //1 2 3 4 5 6 7 8 9 10 hap=55
+        for(k=0; k<10; k++ ){
+        su++ ;
+        if(su==5){continue;}
+        document.write(su,' ');
+        hap += su ;
+        }
+        document.write(' 합계 = ' + hap);   
+    }
+
+  var cnt=0, gtotal=0;
+    function mytest(){
+        document.write(' 04testwhile반복문 연습<br> ');
+        while(cnt<10){
+            cnt=cnt+1;
+            if(cnt==5){continue;} // 1 2 3 4 6 7 8 9 10 gtotal=50
+            document.write(cnt,' ');
+            gtotal = gtotal + cnt;
+        }
+        document.write(' gtotal = ' + gtotal);
+    }
+</script>
+</head>
+<body>
+    
+    <h2>04testwhile.html</h2>
+    <button onclick="mynumber();"> for반복문 </button> 
+    <button onclick="mytest();"> while반복문 </button> 
+   
+    <div id="display"></div>
+</body>
+</html>
